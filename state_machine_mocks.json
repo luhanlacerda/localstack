@@ -1,0 +1,45 @@
+{
+    "StateMachines": {
+        "my_state_machine": {
+            "TestCases": {
+                "test001": {
+                    "ChamaLambdaA": "ChamaLambdaASucesso",
+                    "ChamaLambdaB": "ChamaLambdaBSucesso"
+                },
+                "test002": {
+                    "ChamaLambdaB": "ChamaLambdaBSucesso"
+                }
+            }
+        }
+    },
+    "MockedResponses": {
+        "ChamaLambdaASucesso": {
+            "0": {
+                "Return": {
+                    "StatusCode": 200,
+                    "Payload": {
+                        "greeting": "Mock Hello Lambda A"
+                    }
+                }
+            }
+        },
+        "ChamaLambdaBSucesso": {
+            "0": {
+                "Return": {
+                    "StatusCode": 200,
+                    "Payload": {
+                        "greeting": "Mock Hello Lambda B"
+                    }
+                }
+            }
+        },
+        "ChamaLambdaBErro": {
+            "0": {
+                "Throw": {
+                    "Error": "InternalMockedError",
+                    "Cause": "Mock Error Lambda B"
+                }
+            }
+        }
+    }
+}
